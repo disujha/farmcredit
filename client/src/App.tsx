@@ -42,6 +42,11 @@ function App() {
   };
 
   const loadData = async () => {
+    // First, sync outbound queue and fetch inbound updates
+    await syncManager.sync();
+    await syncManager.fetchFromServer();
+
+    // Then load from local database (now updated with server data)
     const f = await db.getFarmers();
     const l = await db.getLoans();
     const apps = await db.getApplications();

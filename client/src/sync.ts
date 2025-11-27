@@ -40,6 +40,29 @@ export const syncManager = {
       }
     }
     console.log('Sync Complete');
+  },
+
+  // Fetch updates from server (inbound sync)
+  fetchFromServer: async () => {
+    if (!navigator.onLine) {
+      console.log('Offline: Skipping server fetch');
+      return;
+    }
+
+    try {
+      console.log('Fetching updates from server...');
+      const response = await axios.get(`${API_URL}/api/loan-applications`);
+      const serverApps = response.data;
+
+      // Update local database with server data
+      for (const app of serverApps) {
+        await db.updateApplication(app);
+      }
+
+      console.log(`Fetched ${serverApps.length} applications from server`);
+    } catch (error) {
+      console.error('Failed to fetch from server:', error);
+    }
   }
 };
 

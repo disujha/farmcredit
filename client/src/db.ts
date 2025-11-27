@@ -122,6 +122,12 @@ export const db = {
   },
   getApplications: async () => (await dbPromise).getAll('applications'),
 
+  // Update application from server (for inbound sync)
+  updateApplication: async (app: LoanApplication) => {
+    const db = await dbPromise;
+    await db.put('applications', { ...app, synced: 1 });
+  },
+
   getUnsyncedItems: async () => (await dbPromise).getAll('syncQueue'),
   removeSyncItem: async (id: number) => (await dbPromise).delete('syncQueue', id),
   markAsSynced: async (store: 'farmers' | 'loans' | 'applications', id: string) => {
