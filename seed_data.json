@@ -1,0 +1,26 @@
+[
+    {
+        "id": "farmer-001",
+        "name": "Ramesh Kumar",
+        "village": "Rampur",
+        "phone": "9876543210",
+        "landSize": 2.5,
+        "createdAt": "2023-10-01T10:00:00Z"
+    },
+    {
+        "id": "farmer-002",
+        "name": "Sita Devi",
+        "village": "Lakhanpur",
+        "phone": "9876543211",
+        "landSize": 1.2,
+        "createdAt": "2023-10-02T11:30:00Z"
+    },
+    {
+        "id": "farmer-003",
+        "name": "Abdul Khan",
+        "village": "Sonpur",
+        "phone": "9876543212",
+        "landSize": 5.0,
+        "createdAt": "2023-10-03T09:15:00Z"
+    }
+]

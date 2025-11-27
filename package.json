@@ -1,0 +1,27 @@
+{
+  "name": "farm-credit-connect",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "dashboard"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "dev:dashboard": "npm run dev --workspace=dashboard",
+    "install:all": "npm install"
+  },
+  "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "@types/uuid": "^10.0.0",
+    "axios": "^1.13.2",
+    "firebase": "^12.6.0",
+    "idb": "^8.0.3",
+    "react-router-dom": "^7.9.6",
+    "recharts": "^3.5.0",
+    "uuid": "^13.0.0",
+    "vite-plugin-pwa": "^1.1.0"
+  }
+}
